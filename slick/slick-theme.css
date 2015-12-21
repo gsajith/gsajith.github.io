@@ -2,7 +2,7 @@
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
+    background: #f4f4f4 url('./ajax-loader.gif') center center no-repeat;
 }
 
 body {
@@ -21,22 +21,55 @@ body {
 
 .your-class-card:hover{
     margin-top:50px;
-    -webkit-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67);
-    -moz-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67);
-    box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67);
+}
+
+.logo-card {
+    text-align: center;
+    margin-top: 15%;
+    vertical-align: middle;
+}
+.logo-card img{
+    height: 150px;
+    width: auto;
+    max-width: 250px;
+    display: inline-block;
 }
 
 .your-class-card {
-    background: #f06262;
     margin: 20px;
     margin-top: 60px;
     max-height: 400px;
     border-radius: 15px;
     width: 300px;
-    -webkit-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37);
-    -moz-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37);
-    box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37);
     overflow: hidden;
+}
+
+.red {
+    background: #f06262;
+}
+
+.michigan {
+    background: #01265d;
+}
+
+.indeed {
+    background: #1f65f8;
+}
+
+.facebook {
+    background: #3765a3;
+}
+
+.orange {
+    background: #EB896E;
+}
+
+.qualcomm {
+    background: #A3AB82;
+}
+
+.aubergine {
+    background: #AB82A3;
 }
 
 .your-class-card-top {
@@ -44,11 +77,19 @@ body {
 }
 
 .your-class-card-bottom {
-    background: #fff;
-    height: 100%;
-    width: 100%;
+    background: #f4f4f4;
+    height: 176.5px;
     padding: 15px;
-    margin-top: 0px;
+    margin-top: -23px;
+    -webkit-box-shadow: inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+-moz-box-shadow: inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+box-shadow: inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+
+.shifted {
+    margin-top: 5%;
 }
 
 .card-hidden {
@@ -64,16 +105,28 @@ body {
 .slick-center {
     max-height: 460px;
     margin-top: 30px;
--webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29);
--moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29);
-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29);
+-webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+-moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
 }
 
 .slick-center:hover {
     margin-top: 20px;
--webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49);
--moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49);
-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49);
+-webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+-moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.49), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+}
+
+.slick-slide {
+-webkit-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+-moz-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.67), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+}
+
+.slick-slide:hover {
+-webkit-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+-moz-box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
 }
 
 *:focus {
