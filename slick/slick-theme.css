@@ -123,6 +123,31 @@ body {
     font-size: 12px;
 }
 
+.your-class-card-bottom-first {
+    background: transparent;
+    text-align: center;
+    height: 70px;
+    margin-top: 37px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family:Century Gothic, sans-serif;
+    font-size: 35px;
+}
+
+.fa-icon {
+    color: #602727;
+    opacity: .5;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.fa-icon:hover {
+    opacity: .75;
+    font-size: 39px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .shifted {
     margin-top: 5%;
 }
@@ -132,7 +157,6 @@ body {
     margin-top: 250px;
     padding: 15px;
     font-family:Century Gothic, sans-serif;
-    font-size: 12px;
 }
 
 .slick-list {
@@ -288,7 +312,7 @@ box-shadow: 11px 10px 46px -12px rgba(0,0,0,0.37), inset 0px -10px 0px 0px rgba(
 .slick-dots
 {
     position: fixed;
-    bottom: 50px;
+    bottom: 30px;
 
     display: block;
 
