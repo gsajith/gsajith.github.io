@@ -184,7 +184,7 @@
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="slick/slick.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -197,6 +197,8 @@
 		speed: 600,
 		variableWidth: true,
 		infinite: false,
+		touchThreshold: 15,
+		dots: true,
 		responsive: [
 		{
 		  breakpoint: 900,
@@ -206,6 +208,8 @@
 		    centerPadding: '30px',
 		    slidesToShow: 2,
 		infinite: false,
+		touchThreshold: 15,
+		dots: true,
 		  }
 		},
 		{
@@ -216,6 +220,8 @@
 		    centerPadding: '30px',
 		    slidesToShow: 1,
 		infinite: false,
+		touchThreshold: 15,
+		dots: true,
 		    //vertical: true,
 		    //verticalSwiping: true,
 		  }
