@@ -4,7 +4,9 @@
 {
     background: #f4f4f4 url('./ajax-loader.gif') center center no-repeat;
 }
-
+html {
+    overflow-y: hidden;
+}
 body {
     background-image: url("../greygingham.png");
     background-size: cover;
