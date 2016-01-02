@@ -8,7 +8,7 @@ html {
     overflow: hidden;
 }
 body {
-    background-image: url("../greygingham.png");
+    background-image: url("../images/greygingham.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -19,7 +19,11 @@ body {
     display: inline;
     margin: 10px;
     height: 40px;
+    max-width: 50px;
     width: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.51);
 }
 
 .image-popup-link {
