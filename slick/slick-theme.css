@@ -5,7 +5,7 @@
     background: #f4f4f4 url('./ajax-loader.gif') center center no-repeat;
 }
 html {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 body {
     background-image: url("../greygingham.png");
@@ -13,6 +13,17 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     margin: 0px;
+}
+
+.image-popup-link img{
+    display: inline;
+    margin: 10px;
+    height: 40px;
+    width: auto;
+}
+
+.image-popup-link {
+    font-size: 0px;
 }
 
 .transition {
