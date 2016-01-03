@@ -99,8 +99,16 @@ body {
     background: #4ab2c9;
 }
 
+.qualcomm {
+    background: #168c96;
+}
+
 .feedmytrip {
     background: #b50a04;
+}
+
+.maav {
+    background: #34495e;
 }
 
 .urop {
@@ -116,10 +124,6 @@ body {
 
 .orange {
     background: #EB896E;
-}
-
-.qualcomm {
-    background: #A3AB82;
 }
 
 .aubergine {
