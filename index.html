@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="your-class">
-		<div class="your-class-card transition red">
+		<div class="your-class-card transition red" id="title-card">
 			<div class="your-class-card-top logo-card transition-slow shifted">
 				<img class="logoimg" src="images/logo.png">
 				<h1 style="color:#f4f4f4;font-family:Century Gothic, sans-serif;">Gautham<br>Sajith</h1>
@@ -139,16 +139,20 @@
 			</div>
 		</div>
 
-		<div class="your-class-card transition michigan">
+		<div class="your-class-card transition cosmic">
 			<div class="your-class-card-top logo-card transition-slow">
-				<img class="logoimg" src="images/hjcafelogo.png">
+				<img class="logoimg" src="images/cosmiclogo.png">
 				<h1 style="color:#f4f4f4;font-family:Century Gothic, sans-serif;font-size:30px;margin-bottom:24px;">Cosmic Conquest</h1>
 			</div>
 			<div class="your-class-card-bottom card-hidden transition-slow">
 				<b>Major Design Project</b><br>
 				<i>Fall 2014</i><br><br>
 
-				Coursework includes data structures, algorithms, web databases, operating systems, game development, autonomous robotics, security, and mobile application development.
+				A 2D <a href="https://en.wikipedia.org/wiki/4X">4X</a> <strong>strategy game set in space</strong>! Collect resources, upgrade your interstellar fleet, unlock powerful technologies, and destroy your enemy in <strong>real-time top-down-shooter style</strong>. <a href="https://youtu.be/1oX-wRSo-NI">Youtube demo</a>.
+
+				<center><a class="image-popup-link" href="images/cosmic.png">
+					<img src="images/cosmic.png">
+				</a></center>
 			</div>
 		</div>
 
@@ -278,7 +282,7 @@
 				<img class="logoimg" src="images/logo.png">
 				<h1 style="color:#f4f4f4;font-family:Century Gothic, sans-serif;">Hey beautiful,<br>get in touch!</h1>
 			</div>
-			<div class="your-class-card-bottom-first transition-slow">
+			<div class="your-class-card-bottom-first card-hidden transition-slow">
 				<a href="https://www.facebook.com/sajith.gautham" target="_blank"><i class="fa fa-facebook-square fa-icon transition"></i></a>
 				<a href="https://twitter.com/GothamNeedsMe" target="_blank"><i class="fa fa-twitter fa-icon transition"></i></a>
 				<a href="https://github.com/gsajith" target="_blank"><i class="fa fa-github fa-icon transition"></i></a>
@@ -316,6 +320,7 @@
 						centerPadding: '30px',
 						slidesToShow: 2,
 						infinite: false,
+						focusOnSelect: true,
 						touchThreshold: 15,
 						dots: true,
 					}
@@ -328,6 +333,7 @@
 						centerPadding: '30px',
 						slidesToShow: 1,
 						infinite: false,
+						focusOnSelect: true,
 						touchThreshold: 15,
 						dots: true,
 					}
@@ -347,6 +353,7 @@
 			$('.image-popup-link').magnificPopup({
 				type: 'image',
 				overflowY: 'scroll',
+				closeOnContentClick: true,
 				mainClass: 'mfp-with-zoom', 
 				zoom: {
 					enabled: true, 
@@ -360,6 +367,7 @@
 			$('.trio-gallery').magnificPopup({
 				type: 'image',
 				overflowY: 'scroll',
+				closeOnContentClick: true,
 				mainClass: 'mfp-with-zoom', 
 				zoom: {
 					enabled: true, 
@@ -370,12 +378,14 @@
 					}
 				},
 				gallery:{
-					enabled: true
+					enabled: true,
+  					navigateByImgClick: false,
 				}
 			});
 			$('.daily-gallery').magnificPopup({
 				type: 'image',
 				overflowY: 'scroll',
+				closeOnContentClick: true,
 				mainClass: 'mfp-with-zoom', 
 				zoom: {
 					enabled: true, 
@@ -386,9 +396,11 @@
 					}
 				},
 				gallery:{
-					enabled: true
+					enabled: true,
+  					navigateByImgClick: false,
 				}
 			});
+			document.getElementById('title-card').focus();
 		});
 </script>
 </body>

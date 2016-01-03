@@ -1856,6 +1856,8 @@
 
         _.setHeight();
 
+        _.$slides.eq(_.currentSlide).focus();
+
         if (_.options.fade === false) {
             _.setCSS(_.getLeft(_.currentSlide));
         } else {
