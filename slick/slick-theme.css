@@ -38,7 +38,7 @@ body {
     transition:all 1s ease;
 }
 
-.your-class-card:hover{
+.homepage-card:hover{
     margin-top:80px;
 }
 
@@ -54,7 +54,7 @@ body {
     display: inline-block;
 }
 
-.your-class-card {
+.homepage-card {
     margin: 20px;
     margin-top: 90px;
     max-height: 400px;
@@ -130,11 +130,11 @@ body {
     background: #AB82A3;
 }
 
-.your-class-card-top {
+.homepage-card-top {
     padding: 15px;
 }
 
-.your-class-card-bottom {
+.homepage-card-bottom {
     background: #f4f4f4;
     height: 176.5px;
     padding: 15px;
@@ -148,7 +148,25 @@ body {
     font-size: 12px;
 }
 
-.your-class-card-bottom-first {
+.resume_link {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.resume_link a {
+    text-decoration: none;
+    color: #602727;
+    opacity: .5;
+}
+
+.resume_link a:hover {
+    text-decoration: underline;
+    opacity: .75;
+    margin-top: 8px;
+    font-size: 22px;
+}
+
+.homepage-card-bottom-first {
     background: transparent;
     text-align: center;
     height: 70px;
