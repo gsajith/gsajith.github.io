@@ -8,7 +8,7 @@ html {
     overflow: hidden;
 }
 body {
-    background-image: url("../images/greygingham.png");
+    background-image: url("../images/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
