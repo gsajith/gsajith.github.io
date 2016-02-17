@@ -67,6 +67,34 @@
 			</div>
 		</div>
 
+		<div class="homepage-card transition informedtreatments">
+			<div class="homepage-card-top logo-card transition-slow">
+				<img class="logoimg" src="images/itlogo.png">
+				<h1 style="font-size:27px;margin-bottom: 29px;">Informed Treatments</h1>
+			</div>
+			<div class="homepage-card-bottom card-hidden transition-slow">
+				<b>Co-Founder</b><br>
+				<i>January 2016 - Present</i><br><br>
+
+				Designed, built, and launched <a href="http://www.informedtreatments.com">Informed Treatments</a> and its subsidiary sites. Built using <strong>Python</strong>, <strong>Flask</strong>, <strong>Javascript/CSS</strong>, <strong>PSQL</strong>, and <strong>Heroku</strong>. 
+
+				<center>
+					<a class="image-popup-link it-gallery" href="images/it1.png">
+						<img src="images/it1.png">
+					</a>
+					<a class="image-popup-link it-gallery" href="images/it2.png">
+						<img src="images/it2.png">
+					</a>
+					<a class="image-popup-link it-gallery" href="images/it3.png">
+						<img src="images/it3.png">
+					</a>
+					<a class="image-popup-link it-gallery" href="images/it4.png">
+						<img src="images/it4.png">
+					</a>
+				</center>
+			</div>
+		</div>
+
 		<div class="homepage-card transition homejoy">
 			<div class="homepage-card-top logo-card transition-slow">
 				<img class="logoimg" src="images/hjlogo.png">
@@ -392,6 +420,25 @@
 					opener: function(openerElement) {
 						return openerElement.is('img') ? openerElement : openerElement.find('img');
 					}
+				}
+			});
+
+			$('.it-gallery').magnificPopup({
+				type: 'image',
+				overflowY: 'scroll',
+				closeOnContentClick: true,
+				mainClass: 'mfp-with-zoom', 
+				zoom: {
+					enabled: true, 
+					duration: 300, 
+					easing: 'ease-in-out', 
+					opener: function(openerElement) {
+						return openerElement.is('img') ? openerElement : openerElement.find('img');
+					}
+				},
+				gallery:{
+					enabled: true,
+  					navigateByImgClick: false,
 				}
 			});
 			$('.trio-gallery').magnificPopup({
