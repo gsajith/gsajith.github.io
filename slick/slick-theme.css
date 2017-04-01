@@ -14,6 +14,9 @@ body {
     background-position: center center;
     margin: 0px;
 }
+.overflowY {
+    overflow-y: scroll;
+}
 
 .image-popup-link img{
     display: inline;
@@ -29,6 +32,89 @@ body {
 .image-popup-link {
     font-size: 0px;
 }
+
+/************************************** VOXEL PAGE **************************************/
+
+.voxel-hover-container {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: -100%;
+}
+
+.voxel-hover-text {
+  color: white;
+  font-size: 16px;
+  padding: 16px 24px;
+  font-style: normal;
+}
+
+.voxel-popup-link:hover .voxel-hover-container {
+    opacity: 1;
+}
+
+.voxel-popup-link:hover img {
+    opacity: .5;
+}
+
+.voxel-popup-link {
+    display: inline-block;
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    margin:20px;
+}
+
+.voxel-popup-link img {
+    transition: .5s ease;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: relative;
+}
+
+#voxel-page {
+    background-color: #1d1d1d;
+}
+
+#voxel-display {
+    margin-top: 50px;
+    max-width: 900px;
+}
+
+#voxel-display a {
+    text-decoration: none;  
+    font-family:Source Sans Pro, Century Gothic, sans-serif; 
+}
+
+#voxel-header {
+    margin-top: 70px;
+    max-width: 900px;
+    font-size: 35px;
+    color:#f4f4f4;
+    font-family:Source Sans Pro, Century Gothic, sans-serif;
+}
+
+#voxel-header .fa-icon {
+    color: white;
+}
+
+#back-home-button {
+    position: absolute;
+    top: 20;
+    left: 20;
+}
+
+#voxel-header h1 {
+    font-size: 30px;
+}
+
+#voxel-header h3 {
+    font-size: 20px;
+}
+
+
+/************************************** END VOXEL PAGE **************************************/
 
 .transition {
     transition:all .3s ease;
