@@ -37,7 +37,7 @@
 		<div class="homepage-card transition red" id="title-card">
 			<div class="homepage-card-top logo-card transition-slow shifted">
 				<img class="logoimg" src="images/logo.png">
-				<h1>Gautham<br>Sajith</h1><a href="voxel">voxel</a>
+				<h1>Gautham<br>Sajith</h1>
 			</div>
 			<div class="homepage-card-bottom-first transition-slow">
 				<a href="https://www.facebook.com/sajith.gautham" target="_blank"><i class="fa fa-facebook-square fa-icon transition"></i></a>
@@ -64,6 +64,33 @@
 				respond to incoming requests.<br><br>
 
 				More info <a href="https://www.google.com/adwords/express/home-service-ads/" target="_blank">here</a>.
+			</div>
+		</div>
+
+		<div class="homepage-card transition voxel">
+			<div class="homepage-card-top logo-card transition-slow">
+				<img class="logoimg" src="images/googlelogo.png">
+				<h1>Voxel Art</h1>
+			</div>
+			<div class="homepage-card-bottom card-hidden transition-slow">
+				<b>Original 3D artwork</b><br>
+				<i>Mostly made in <a href="https://ephtracy.github.io/">Magical Voxel</a></i><br><br>
+
+				A collection <strong>voxel</strong> (3D pixel) art I've made over time, mostly inspired by architecture and rooms. <br><br>
+
+				Take a look at the full gallery <a href="voxel" target="_blank">here</a>.
+
+				<center>
+					<a class="image-popup-link voxel-gallery" href="images/voxel/monument1.png">
+						<img src="images/voxel/monument1.png">
+					</a>
+					<a class="image-popup-link voxel-gallery" href="images/voxel/bedroom2.png">
+						<img src="images/voxel/bedroom2.png">
+					</a>
+					<a class="image-popup-link voxel-gallery" href="images/voxel/tatamiroom1.png">
+						<img src="images/voxel/tatamiroom1.png">
+					</a>
+				</center>
 			</div>
 		</div>
 
@@ -492,6 +519,24 @@
 				}
 			});
 			$('.gather-gallery').magnificPopup({
+				type: 'image',
+				overflowY: 'scroll',
+				closeOnContentClick: true,
+				mainClass: 'mfp-with-zoom', 
+				zoom: {
+					enabled: true, 
+					duration: 300, 
+					easing: 'ease-in-out', 
+					opener: function(openerElement) {
+						return openerElement.is('img') ? openerElement : openerElement.find('img');
+					}
+				},
+				gallery:{
+					enabled: true,
+  					navigateByImgClick: false,
+				}
+			});
+			$('.voxel-gallery').magnificPopup({
 				type: 'image',
 				overflowY: 'scroll',
 				closeOnContentClick: true,
