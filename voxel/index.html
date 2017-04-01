@@ -121,7 +121,8 @@
   					navigateByImgClick: false,
 				}
 			});
-			$('.voxel-popup-link').each(function(index) {
+			setTimeout(function() {
+				$('.voxel-popup-link').each(function(index) {
 				var img = $(this).find('img');
 				var width = img[0].naturalWidth;
 				var height = img[0].naturalHeight;
@@ -136,6 +137,7 @@
 					img.css('bottom', ((((drawnHeight / drawnWidth) * 100) - 100) / 2) + '%');
 				}
 			});
+			}, 100);
 		});
 </script>
 </html>
