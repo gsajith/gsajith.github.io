@@ -1,6 +1,5 @@
 :root {
-  --carousel-width: 95vw;
-  --carousel-padding: 5px;
+  --carousel-width: 100vw;
 }
 
 .viewport {
@@ -9,10 +8,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
 }
 
 .carousel {
+  transition: .3s ease-out;
   width: var(--carousel-width);
   height: auto;
 }
@@ -20,7 +19,7 @@
 .scroll {
   display: flex;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
   height: 100%;
@@ -34,75 +33,96 @@ ul.scroll {
 }
 
 .scroll-item-outer {
-  width: 100%;
+  width: auto;
   height: 100%
-}
-
-.scroll-item.selected-scroll-item {
-  background-color:#00ffff;
-  height: 400px;
-  margin-top: 20px;
 }
 
 .scroll-item {
   background-color:#ff00ff;
-  transition: .3s ease;
-  width: 300px;
-  height: 350px;
-  margin: 20px;
-  margin-top: 45px;
-}
+  width: 75vmin;
+  height: 87.5vmin;
+  transition: .3s ease-out;
+  max-width: 300px;
+  max-height: 350px;
 
-.scroll-item.scroll-item-padding {
-  width: 50vw;
-}
-
-.scroll-item:not(.scroll-item-padding) {
-  -webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
-  -moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
-  box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+  margin: 5vmin;
+  margin-top: 11.25vmin;
+  margin-bottom: 11.25vmin;
 }
 
 .scroll-item:hover {
-  margin-top:35px;
+  margin-top: 8.75vmin;
+  margin-bottom: 8.75vmin;
+}
+
+.scroll-item.selected-scroll-item {
+  height: 100vmin;
+  max-height: 400px;
+  margin-top: 5vmin;
+  margin-bottom: 5vmin;
 }
 
 .scroll-item.selected-scroll-item:hover {
-  margin-top:10px;
+  margin-top:2.5vmin;
+  margin-top:2.5vmin;
 }
 
+.scroll-item:not(.scroll-item-padding) {
+  -webkit-box-shadow: 5vmin 4vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
+  -moz-box-shadow: 5vmin 4vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
+  box-shadow: 5vmin 4vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
+}
 .scroll-item:not(.scroll-item-padding):hover {
-  -webkit-box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
-  -moz-box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
-  box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+  -webkit-box-shadow: 6.2vmin 7vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
+  -moz-box-shadow: 6.2vmin 7vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
+  box-shadow: 6.2vmin 7vmin 13vmin -3vmin rgba(0,0,0,0.29), inset 0px -2vmin 0px 0px rgba(0,0,0,0.11);
 }
 
 .scroll-item.scroll-item-padding {
-  width: 50vw;
+  background-color: transparent;
+  width: calc(50vw - 170px);
+  max-width: 9000px;
 }
 
-@supports (scroll-snap-align: start) {
-  /* modern scroll snap points */
-  .scroll {
-    scroll-snap-type: x mandatory;
+@media screen and (min-width: 400px) {
+  .scroll-item:not(.scroll-item-padding) {
+    -webkit-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+    box-shadow: 20px 15px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
   }
-  .scroll-item-outer {
-    scroll-snap-align: center;
+  .scroll-item:not(.scroll-item-padding):hover {
+    -webkit-box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
+    box-shadow: 28px 30px 53px -12px rgba(0,0,0,0.29), inset 0px -10px 0px 0px rgba(0,0,0,0.11);
   }
 }
 
-@supports not (scroll-snap-align: start) {
-  /* old scroll snap points spec */
-  .scroll {
-    -webkit-scroll-snap-type: mandatory;
-    scroll-snap-type: mandatory;
-    -webkit-scroll-snap-destination: 0 50%;
-    scroll-snap-destination: 0 50%;
-    -webkit-scroll-snap-points-x: repeat(100%);
-    scroll-snap-points-x: repeat(100%);
+@media screen and (min-height: 550px) {
+  .carousel {
+    margin-top: 12vh;
   }
-  
-  .scroll-item-outer {
-    scroll-snap-coordinate: 0 0;
+}
+
+@media screen and (min-width: 400px) and (min-height: 400px) {
+  .scroll-item {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .scroll-item.selected-scroll-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .scroll-item:hover {
+    margin-top:35px;
+    margin-bottom:35px;
+  }
+
+  .scroll-item.selected-scroll-item:hover {
+    margin-top:10px;
+    margin-bottom:10px;
   }
 }

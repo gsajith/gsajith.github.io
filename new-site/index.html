@@ -1,18 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <div class="viewport">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   </head>
   <body>
     <div class="carousel">
       <ul id="scroll" class="scroll">
-        <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:transparent">
-          </div>
-        </li>
-        <li id="first-scroll-item" class="scroll-item-outer">
-          <div class="scroll-item">
+        <li id="first-padding" class="scroll-item-outer">
+          <div class="scroll-item scroll-item-padding">
           </div>
         </li>
         <li class="scroll-item-outer">
@@ -39,57 +35,92 @@
           <div class="scroll-item">
           </div>
         </li>
-        <li id="last-scroll-item" class="scroll-item-outer">
+        <li class="scroll-item-outer">
           <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:transparent">
+          <div class="scroll-item">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item scroll-item-padding">
           </div>
         </li>
       </ul>
     </div>
   </div>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>(function() {
-    function scrollListener(e) {
-        e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        if (scrollView.scrollLeft < firstItemPosition) {
-          setTimeout(function () {
-            scrollView.scrollTo(firstItemPosition, 0);
-          },2);
-        } else if(e.target.scrollLeft > lastItemPosition) {
-          setTimeout(function () {
-            scrollView.scrollTo(lastItemPosition, 0);
-          },2);
-        }
-        var newSelected = Math.min(maxVisibleChildren,Math.max(1, Math.round(scrollView.scrollLeft/(firstItemPosition+100))));
-        console.log(scrollView.scrollLeft);
-        if (newSelected != selected) {
-          console.log('updating ' + newSelected);
-            scrollView.children[selected].children[0].classList.remove('selected-scroll-item');
-            selected = newSelected;
-            scrollView.children[selected].children[0].classList.add('selected-scroll-item');
+  function scrollListener(e) {
+    screenMidpoint = window.innerWidth / 2;
 
-        }
+    var newSelected = 
+    Math.min(maxVisibleChildren, 
+      Math.max(1, Math.floor((scrollView.scrollLeft + screenMidpoint - firstPadding.offsetWidth + cardWidth)/cardWidth)));
+    if (newSelected != selected) {
+      scrollView.children[selected].children[0].classList.remove('selected-scroll-item');
+      selected = newSelected;
+      scrollView.children[selected].children[0].classList.add('selected-scroll-item');
+      scrollToSelected();
+    } 
+    if (scrollView.scrollLeft < calculateScrollTarget(1) || scrollView.scrollLeft + 10 > calculateScrollTarget(maxVisibleChildren -2)) {
+    } else {
+      scrollToSelected();
     }
-    var scrollView = document.getElementById('scroll');
-    var firstItemPosition = 231;
-    var lastItemPosition = 2611;
-    var newSelected = 1;
-    var selected = 0;
-    var maxVisibleChildren = scrollView.childElementCount - 2;
+  }
 
-    if (scrollView.addEventListener) {
+  function scrollToSelected() {
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(function() {
+      $('#scroll').animate({
+        scrollLeft: calculateScrollTarget(selected)
+      }, 200);
+    }, 50));
+  }
+
+  function calculateScrollTarget(index) {
+    return (index-1)*cardWidth + cardWidth/2 + firstPadding.offsetWidth - screenMidpoint;
+  }
+
+  var scrollView = document.getElementById('scroll');
+  var firstPadding = document.getElementById('first-padding');
+  var cardWidth = scrollView.children[1].offsetWidth;
+  var cardNoOpenMargin = cardWidth * .2;
+  var screenMidpoint = window.innerWidth / 2;
+
+  var maxVisibleChildren = scrollView.childElementCount;
+
+  var newSelected = -1;
+  var selected = 0;
+
+  for (var i = 1; i < scrollView.childElementCount-1; i++) {
+      (function (index) {
+        if (scrollView.addEventListener) {
+          scrollView.children[index].children[0].addEventListener("click", function() {
+            selected = index;
+            scrollToSelected();
+          }, false);
+        } else {
+          scrollView.children[index].children[0].attachEvent("click", function() {
+            selected = index;
+            scrollToSelected();
+          })
+        }
+      }).call(this, i);
+  }
+
+  scrollView.scrollTo(10, 0);
+
+  if (scrollView.addEventListener) {
         // IE9, Chrome, Safari, Opera, Firefox
         scrollView.addEventListener("scroll", scrollListener, false);
         // Firefox
-    } else {
+      } else {
         // IE 6/7/8
         scrollView.attachEvent("scroll", scrollListener);
-    }
-    scrollView.scrollTo(firstItemPosition, 0)
-})();
-</script>
-</html>
+      }
+    })();
+  </script>
+  </html>
