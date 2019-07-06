@@ -1,36 +1,83 @@
-<html xmlns="http://www.w3.org/1999/xhtml>
-      <div class="viewport">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<div class="viewport">
 
-<head>
-  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   </head>
   <body>
-  <div class="carousel-frame">
     <div class="carousel">
-      <ul class="scroll">
+      <ul id="scroll" class="scroll">
         <li class="scroll-item-outer">
-          <div class="scroll-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cute_grey_kitten.jpg/1280px-Cute_grey_kitten.jpg" alt="Picture of a gray kitten looking at the camera" />
+          <div class="scroll-item scroll-item-padding" style="background-color:#000000">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Kitten_in_Rizal_Park%2C_Manila.jpg" alt="Picture of a gray kitten looking at a branch"/>
+          <div id="first-scroll-item" class="scroll-item" style="background-color:#ff00ff">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Red_Kitten_01.jpg/1280px-Red_Kitten_01.jpg" alt="Picture of an orange kitten looking at the camera" />
+          <div class="scroll-item" style="background-color:#ff0000">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Youngkitten.JPG/1280px-Youngkitten.JPG" alt="Picture of a young kitten opening its eyes"/>
+          <div class="scroll-item" style="background-color:#0000ff">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#00ff00">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#ff00ff">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#ff0000">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#0000ff">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div id="last-scroll-item" class="scroll-item" style="background-color:#00ff00">
+          </div>
+        </li>
+        <li class="scroll-item-outer">
+          <div class="scroll-item scroll-item-padding" style="background-color:#000000">
           </div>
         </li>
       </ul>
     </div>
   </div>
-</div>
 </body>
+<script>(function() {
+    function scrollListener(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        if (scrollView.scrollLeft < firstItemPosition) {
+          setTimeout(function () {
+            scrollView.scrollTo(firstItemPosition, 0);
+          },2);
+        } else if(e.target.scrollLeft > lastItemPosition) {
+          setTimeout(function () {
+            scrollView.scrollTo(lastItemPosition, 0);
+          },2);
+        }
+        console.log(scrollView.scrollLeft);
+    }
+    var scrollView = document.getElementById('scroll');
+    var firstItemPosition = document.getElementById('first-scroll-item').offsetLeft;
+    var lastItemPosition = document.getElementById('last-scroll-item').offsetLeft - ((document.getElementById('last-scroll-item').offsetWidth)/2.0);
+    if (scrollView.addEventListener) {
+        // IE9, Chrome, Safari, Opera, Firefox
+        scrollView.addEventListener("scroll", scrollListener, false);
+        // Firefox
+    } else {
+        // IE 6/7/8
+        scrollView.attachEvent("scroll", scrollListener);
+    }
+    scrollView.scrollTo(firstItemPosition, 0)
+})();
+</script>
 </html>
