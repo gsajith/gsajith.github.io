@@ -42,6 +42,11 @@ body {
   box-sizing: border-box;
 }
 
+#mdgen-icon {
+    max-width: 100px;
+    max-height: 100px;
+}
+
 .device-google-pixel .device-content{
     border: 1px solid #aaa;
     height: 573px;
