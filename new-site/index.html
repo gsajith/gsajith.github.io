@@ -8,43 +8,43 @@
     <div class="carousel">
       <ul id="scroll" class="scroll">
         <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:#ffffff">
+          <div class="scroll-item scroll-item-padding" style="background-color:transparent">
           </div>
         </li>
         <li id="first-scroll-item" class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#ff00ff">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#ff0000">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#0000ff">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#00ff00">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#ff00ff">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#ff0000">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#0000ff">
+          <div class="scroll-item">
           </div>
         </li>
         <li id="last-scroll-item" class="scroll-item-outer">
-          <div class="scroll-item" style="background-color:#00ff00">
+          <div class="scroll-item">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:#ffffff">
+          <div class="scroll-item scroll-item-padding" style="background-color:transparent">
           </div>
         </li>
       </ul>
@@ -64,11 +64,23 @@
             scrollView.scrollTo(lastItemPosition, 0);
           },2);
         }
+        var newSelected = Math.min(maxVisibleChildren,Math.max(1, Math.round(scrollView.scrollLeft/(firstItemPosition+100))));
         console.log(scrollView.scrollLeft);
+        if (newSelected != selected) {
+          console.log('updating ' + newSelected);
+            scrollView.children[selected].children[0].classList.remove('selected-scroll-item');
+            selected = newSelected;
+            scrollView.children[selected].children[0].classList.add('selected-scroll-item');
+
+        }
     }
     var scrollView = document.getElementById('scroll');
-    var firstItemPosition = 240;
-    var lastItemPosition = 2619;
+    var firstItemPosition = 231;
+    var lastItemPosition = 2611;
+    var newSelected = 1;
+    var selected = 0;
+    var maxVisibleChildren = scrollView.childElementCount - 2;
+
     if (scrollView.addEventListener) {
         // IE9, Chrome, Safari, Opera, Firefox
         scrollView.addEventListener("scroll", scrollListener, false);
@@ -78,7 +90,6 @@
         scrollView.attachEvent("scroll", scrollListener);
     }
     scrollView.scrollTo(firstItemPosition, 0)
-    console.log("first:" + firstItemPosition);
 })();
 </script>
 </html>
