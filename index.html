@@ -48,6 +48,40 @@
 			</div>
 		</div>
 
+		<div class="homepage-card transition red">
+			<div class="homepage-card-top logo-card transition-slow">
+				<img class="logoimg" src="images/logo.png">
+				<h1>About Me</h1>
+			</div>
+			<div class="homepage-card-bottom card-hidden transition-slow">
+				I'm a software engineer at <b>Google San Francisco</b>. I work on the <b>Material Design</b> team.<br><br>
+
+				My interests include: <i>building beautiful UIs, technology for developing nations, conversational user interfaces, and assisstive technologies.</i> <br><br>
+
+				My hobbies include: <i>digital art, fashion, garment-making, baking, concerts, and social justice.</i>
+
+			</div>
+		</div>
+
+		<div class="homepage-card transition mdgen">
+			<div class="homepage-card-top logo-card transition-slow">
+				<img class="logoimg" src="images/mdgen.png">
+				<h1>MDGen</h1>
+			</div>
+			<div class="homepage-card-bottom card-hidden transition-slow">
+				<b>Material Design Generator</b><br>
+				<i>Android app demoing programmatic UI generation using the Material Design Components library.</i><br><br>
+
+				View the full project and download the app <a href="mdgen" target="_blank">here</a>.
+
+				<center>
+					<a class="image-popup-link mdgen-gallery" href="images/mdgen/mdgendemo.gif">
+						<img src="images/mdgen/mdgendemo.gif">
+					</a>
+				</center>
+			</div>
+		</div>
+
 		<div class="homepage-card transition google-md">
 			<div class="homepage-card-top logo-card transition-slow">
 				<img class="logoimg" src="images/materiallogo.png">
@@ -563,6 +597,24 @@
 				}
 			});
 			$('.voxel-gallery').magnificPopup({
+				type: 'image',
+				overflowY: 'scroll',
+				closeOnContentClick: true,
+				mainClass: 'mfp-with-zoom', 
+				zoom: {
+					enabled: true, 
+					duration: 300, 
+					easing: 'ease-in-out', 
+					opener: function(openerElement) {
+						return openerElement.is('img') ? openerElement : openerElement.find('img');
+					}
+				},
+				gallery:{
+					enabled: true,
+  					navigateByImgClick: false,
+				}
+			});
+			$('.mdgen-gallery').magnificPopup({
 				type: 'image',
 				overflowY: 'scroll',
 				closeOnContentClick: true,
