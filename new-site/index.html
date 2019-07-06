@@ -8,11 +8,11 @@
     <div class="carousel">
       <ul id="scroll" class="scroll">
         <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:#000000">
+          <div class="scroll-item scroll-item-padding" style="background-color:#ffffff">
           </div>
         </li>
-        <li class="scroll-item-outer">
-          <div id="first-scroll-item" class="scroll-item" style="background-color:#ff00ff">
+        <li id="first-scroll-item" class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#ff00ff">
           </div>
         </li>
         <li class="scroll-item-outer">
@@ -39,12 +39,12 @@
           <div class="scroll-item" style="background-color:#0000ff">
           </div>
         </li>
-        <li class="scroll-item-outer">
-          <div id="last-scroll-item" class="scroll-item" style="background-color:#00ff00">
+        <li id="last-scroll-item" class="scroll-item-outer">
+          <div class="scroll-item" style="background-color:#00ff00">
           </div>
         </li>
         <li class="scroll-item-outer">
-          <div class="scroll-item scroll-item-padding" style="background-color:#000000">
+          <div class="scroll-item scroll-item-padding" style="background-color:#ffffff">
           </div>
         </li>
       </ul>
@@ -67,8 +67,8 @@
         console.log(scrollView.scrollLeft);
     }
     var scrollView = document.getElementById('scroll');
-    var firstItemPosition = document.getElementById('first-scroll-item').offsetLeft;
-    var lastItemPosition = document.getElementById('last-scroll-item').offsetLeft - ((document.getElementById('last-scroll-item').offsetWidth)/2.0);
+    var firstItemPosition = 240;
+    var lastItemPosition = 2619;
     if (scrollView.addEventListener) {
         // IE9, Chrome, Safari, Opera, Firefox
         scrollView.addEventListener("scroll", scrollListener, false);
@@ -78,6 +78,7 @@
         scrollView.attachEvent("scroll", scrollListener);
     }
     scrollView.scrollTo(firstItemPosition, 0)
+    console.log("first:" + firstItemPosition);
 })();
 </script>
 </html>
