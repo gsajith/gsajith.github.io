@@ -38,6 +38,10 @@ body {
     background-color: #ffffff;
 }
 
+#mdgen-page * {
+  box-sizing: border-box;
+}
+
 .device-google-pixel .device-content{
     border: 1px solid #aaa;
     height: 573px;
@@ -63,10 +67,6 @@ body {
 
 #mdgen-header h3 {
     font-size: 20px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 /* Create two equal columns that floats next to each other */
