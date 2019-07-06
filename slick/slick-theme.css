@@ -57,6 +57,22 @@ body {
     font-family:Source Sans Pro, Century Gothic, sans-serif;
 }
 
+#mdgen-content {
+    padding: 15px 50px 15px 50px;
+    color:#333;
+    max-width: 450px;
+    font-family:Source Sans Pro, Century Gothic, sans-serif;
+}
+
+#mdgen-content h3 {
+    margin-block-start: 2em;
+    margin-block-end: .5em;
+}
+
+#mdgen-content a {
+    color: #000;
+}
+
 #mdgen-footer .fa-icon {
     color: black;
 }
