@@ -74,8 +74,13 @@ body {
     margin-block-end: .5em;
 }
 
-#mdgen-content a {
+#mdgen-page a {
     color: #000;
+    text-decoration: underline;
+}
+
+#mdgen-page a:hover {
+    text-decoration-style: dotted;
 }
 
 #mdgen-footer .fa-icon {
@@ -88,6 +93,10 @@ body {
 
 #mdgen-header h3 {
     font-size: 20px;
+}
+
+#mdgen-row {
+    max-width: 1200px;
 }
 
 /* Create two equal columns that floats next to each other */
