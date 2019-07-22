@@ -41,14 +41,12 @@
          */
         const bindEvents = function() {
             const _this = this;
-            console.log('binding');
-            console.log(this);
             $(this).on('mousemove touchmove', mouseMove);
             $(this).on('mouseenter touchstart', mouseEnter);
             if (this.settings.reset) $(this).on('mouseleave touchend touchcancel', mouseLeave);
             if (this.settings.glare) $(window).on('resize', updateGlareSize.bind(_this));
 
-            if ( window.DeviceMotionEvent ) {
+            /*if ( window.DeviceMotionEvent ) {
                 window.ondeviceorientation = function(event) {
                   mouseEnter.call(_this);
                   beta = event.beta;
@@ -58,7 +56,7 @@
                     fakeMousePosition(_this, gamma, beta)
                   }, 50)
                 }
-              }
+              }*/
         };
 
         const fakeMousePosition = function(el, _g, _b) {
@@ -87,7 +85,6 @@
          * When user mouse enters tilt element
          */
         const mouseEnter = function(event) {
-            console.log('mouseEnter');
             this.ticking = false;
             $(this).css({'will-change': 'transform'});
             setTransition.call(this);
@@ -114,7 +111,6 @@
          * When user mouse moves over the tilt element
          */
         const mouseMove = function(event) {
-            console.log('mouseMove');
             this.mousePositions = getMousePositions(event);
             requestTick.call(this);
         };
@@ -123,7 +119,6 @@
          * When user mouse leaves tilt element
          */
         const mouseLeave = function() {
-            console.log('mouseLeave');
             setTransition.call(this);
             this.reset = true;
             requestTick.call(this);
@@ -279,8 +274,6 @@
          * Loop every instance
          */
         return this.each(function () {
-
-            console.log(this);
 
             /**
              * Default settings merged with user settings
