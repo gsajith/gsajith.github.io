@@ -278,6 +278,8 @@
          */
         return this.each(function () {
 
+            console.log(this);
+
             /**
              * Default settings merged with user settings
              * Can be set trough data attributes or as parameter.
