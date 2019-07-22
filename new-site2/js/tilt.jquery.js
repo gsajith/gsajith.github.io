@@ -45,7 +45,25 @@
             $(this).on('mouseenter touchstart', mouseEnter);
             if (this.settings.reset) $(this).on('mouseleave touchend touchcancel', mouseLeave);
             if (this.settings.glare) $(window).on('resize', updateGlareSize.bind(_this));
+
+            if ( window.DeviceMotionEvent ) {
+                window.ondeviceorientation = function(event) {
+                  beta = event.beta;
+                  gamma = event.gamma;
+                  setTimeout(function(){
+                    fakeMousePosition(gamma, beta)
+                  }, 50)
+                }
+              }
         };
+
+        const fakeMousePosition = function(_g, _b) {
+            const gammaPercent = _g / 30;
+            const betaPercent = _b / 30;
+
+            this.mousePositions.x = ($(this).outerWidth() / 2) + (gammaPercent * $(this).outerWidth() / 2);
+            this.mousePositions.y = ($(this).outerHeight() / 2) + (betaPercent * $(this).outerHeight() / 2);
+        }
 
         /**
          * Set transition only on mouse leave and mouse enter so it doesn't influence mouse move transforms
@@ -225,7 +243,7 @@
             $(this).each(function () {
                 $(this).find('.js-tilt-glare').remove();
                 $(this).css({'will-change': '', 'transform': ''});
-                $(this).off('mousemove mouseenter mouseleave');
+                $(this).off('mousemove mouseenter mouseleave touchmove touchstart touchend touchcancel');
             });
         };
 
