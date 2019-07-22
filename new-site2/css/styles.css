@@ -23,8 +23,10 @@ body {
 }
 
 #header-text {
-	text-align: center;
+	padding-left: 15vw;
+	padding-right: 15vw;
 	padding-bottom: 15vw;
+	text-align: center;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d; 
 }
@@ -71,7 +73,7 @@ h2 {
 	border-radius: 1vw;
 	background-color: #BD37A5;
 	position: relative;
-	box-shadow: -3px 3px 1px rgba(0, 0, 0, .2);
+	box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);
 }
 
 .dot2 {
@@ -80,7 +82,7 @@ h2 {
 	border-radius: 1vw;
 	background-color: #415CA9;
 	position: relative;
-	box-shadow: -3px 3px 1px rgba(0, 0, 0, .2);
+	box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);
 }
 
 .line {
