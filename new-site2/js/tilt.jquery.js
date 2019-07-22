@@ -41,6 +41,8 @@
          */
         const bindEvents = function() {
             const _this = this;
+            console.log('binding');
+            console.log(this);
             $(this).on('mousemove touchmove', mouseMove);
             $(this).on('mouseenter touchstart', mouseEnter);
             if (this.settings.reset) $(this).on('mouseleave touchend touchcancel', mouseLeave);
