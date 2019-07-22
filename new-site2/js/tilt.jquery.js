@@ -48,21 +48,23 @@
 
             if ( window.DeviceMotionEvent ) {
                 window.ondeviceorientation = function(event) {
+                  mouseEnter.call(_this);
                   beta = event.beta;
                   gamma = event.gamma;
                   setTimeout(function(){
-                    fakeMousePosition(gamma, beta)
+                    fakeMousePosition(_this, gamma, beta)
                   }, 50)
                 }
               }
         };
 
-        const fakeMousePosition = function(_g, _b) {
+        const fakeMousePosition = function(el, _g, _b) {
             const gammaPercent = _g / 30;
             const betaPercent = _b / 30;
 
-            this.mousePositions.x = ($(this).outerWidth() / 2) + (gammaPercent * $(this).outerWidth() / 2);
-            this.mousePositions.y = ($(this).outerHeight() / 2) + (betaPercent * $(this).outerHeight() / 2);
+            el.mousePositions = {x: ($(el).outerWidth() / 2) + (gammaPercent * $(el).outerWidth() / 2),
+                y: ($(el).outerHeight() / 2) + (betaPercent * $(el).outerHeight() / 2)};
+            requestTick.call(el);
         }
 
         /**
