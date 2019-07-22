@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>New site!</title>
+
+	<link rel="stylesheet" href="css/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+	<!-- <link rel="icon" href="images/favicon.png" /> -->
+</head>
+<body>
+	<div id="lines-div">
+	</div>
+	<div id="start-page">
+		<div data-tilt id="header-text">
+			<div class="dot1" style="transform: translateZ(60px) scale(.9); top: 20vw; left: -2%"></div>
+			<div class="dot1" style="transform: translateZ(140px) scale(1.1); top: 11.5vw; left: 7%"></div>
+			<div class="dot1" style="transform: translateZ(80px) scale(.95); top: 26vw; left: 35%"></div>
+			<div class="dot1" style="transform: translateZ(160px) scale(1.15); top: 20vw; left: 47%"></div>
+			<div class="dot1" style="transform: translateZ(40px) scale(.85); top: 9.5vw; left: 67%"></div>
+			<div class="dot1" style="transform: translateZ(100px) scale(1); top: 24.5vw; left: 79%"></div>
+			<div class="dot1" style="transform: translateZ(80px) scale(.9); top: 12.5vw; left: 98%"></div>
+
+			<div class="dot2" style="transform: translateZ(100px) scale(1); top: 10.5vw; left: 4%"></div>
+			<div class="dot2" style="transform: translateZ(60px) scale(.9); top: 21vw; left: 10%"></div>
+			<div class="dot2" style="transform: translateZ(160px) scale(1.15); top: 7.5vw; left: 31%"></div>
+			<div class="dot2" style="transform: translateZ(120px) scale(1.05); top: 20.5vw; left: 55%"></div>
+			<div class="dot2" style="transform: translateZ(80px) scale(.95); top: 3.5vw; left: 52%"></div>
+			<div class="dot2" style="transform: translateZ(40px) scale(.85); top: 4vw; left: 65%"></div>
+			<div class="dot2" style="transform: translateZ(120px) scale(1.05); top: 1.5vw; left: 85%"></div>
+			<div class="dot2" style="transform: translateZ(60px) scale(.9); top: 12vw; left: 94%"></div>
+
+			<h1 style="transform: translateZ(100px);">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</h1>
+			<h2 style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
+			<div style="transform: translateZ(100px);" id="header-text-shadow"></div>
+		</div>
+	</div>
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+	<script src="js/lines.js"></script>
+	<script src="js/rotation.js"></script>
+	<script src="js/tilt.jquery.js"></script>
+	<script>
+		var windowWidth = 0;
+		var windowHeight = 0;
+		var headerPositions = {};
+
+		$( document ).ready(function() {
+			// drawLine();
+			bindRotation();
+			$('#header-text').tilt({
+			    reset: false,
+			    easing: "cubic-bezier(.03,.98,.52,.99)",
+			    perspective: 1000,
+			    maxTilt: 50
+			});
+		});
+	</script>
+</body>
+</html>
