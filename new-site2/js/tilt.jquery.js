@@ -46,16 +46,7 @@
             if (this.settings.reset) $(this).on('mouseleave touchend touchcancel', mouseLeave);
             if (this.settings.glare) $(window).on('resize', updateGlareSize.bind(_this));
 
-            if ( window.DeviceMotionEvent ) {
-                window.ondeviceorientation = function(event) {
-                  mouseEnter.call(_this);
-                  beta = event.beta;
-                  gamma = event.gamma;
-                  setTimeout(function(){
-                    fakeMousePosition(_this, gamma, beta)
-                  }, 50)
-                }
-              }
+
         };
 
         const fakeMousePosition = function(el, _g, _b) {
