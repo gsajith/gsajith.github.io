@@ -137,8 +137,8 @@
             const height = $(this).outerHeight();
             const left = $(this).offset().left;
             const top = $(this).offset().top;
-            const percentageX = (this.mousePositions.x - left) / width;
-            const percentageY = (this.mousePositions.y - top) / height;
+            const percentageX = 1 - ((this.mousePositions.x - left) / width);
+            const percentageY = 1 - ((this.mousePositions.y - top) / height);
             // x or y position inside instance / width of instance = percentage of position inside instance * the max tilt value
             const tiltX = ((this.settings.maxTilt / 2) - ((percentageX) * this.settings.maxTilt)).toFixed(2);
             const tiltY = (((percentageY) * this.settings.maxTilt) - (this.settings.maxTilt / 2)).toFixed(2);

@@ -17,17 +17,14 @@ body {
 	justify-content: center;
 
 	background: #262F4A; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover, #262F4A 25%, #1B2134 100%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, #262F4A 25%,#1B2134 100%); /* Chrome10-25,Safari5.1-6 */
 	background: radial-gradient(ellipse at center, #262F4A 25%,#1B2134 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 #header-text {
-	padding-left: 15vw;
-	padding-right: 15vw;
+	padding-left: 35vw;
+	padding-right: 35vw;
 	padding-bottom: 15vw;
 	text-align: center;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d; 
 }
 
@@ -62,8 +59,6 @@ h2 {
 	width: 65vw;
 	height: 7vw;	
 	background: transparent; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover, #1B2134 15%, transparent 70%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, #1B2134 15%,transparent 70%); /* Chrome10-25,Safari5.1-6 */
 	background: radial-gradient(ellipse at center, #1B2134 15%,transparent 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
@@ -73,7 +68,7 @@ h2 {
 	border-radius: 1vw;
 	background-color: #BD37A5;
 	position: relative;
-	box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);
+	/*box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);*/
 }
 
 .dot2 {
@@ -82,7 +77,7 @@ h2 {
 	border-radius: 1vw;
 	background-color: #415CA9;
 	position: relative;
-	box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);
+	/*box-shadow: -.3vw .3vw 1px rgba(0, 0, 0, .2);*/
 }
 
 .line {
@@ -90,4 +85,44 @@ h2 {
 	position: absolute;
 	background-color: #db00C2;
 	box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #db00C2, 0 0 30px #db00C2, 0 0 40px #db00C2, 0 0 55px #db00C2, 0 0 75px #db00C2;
+}
+
+.scroll-button {
+	width: 72px;
+	height: 48px;
+	position: absolute;
+	bottom: 72px;
+	border-radius: 10px;
+	color: white;
+	background: linear-gradient(105deg,
+    #BD37A5, #C763B5,
+    /* Repeat your base gradient stops */
+    #BD37A5, #C763B5,
+    /* Repeat your first gradient stop */
+    #BD37A5);
+    background-size: 200% 200%;
+    animation: glare 6s linear infinite;
+    box-shadow: -1px 3px 0px #4A1942;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	transition:box-shadow .15s ease-in-out,transform .15s ease-in-out;
+}
+
+.scroll-button:hover {
+    animation: glare 1s linear infinite;
+    box-shadow: -3px 5px 0px #4A1942;
+    transform:translate(2px,-2px)
+}
+
+.scroll-button img {
+	width: 36px;
+	height: 36px;
+	margin-right: 1px;
+}
+
+@keyframes glare {
+   0% { background-position: 100% 100% }
+  100% { background-position: 0% 0% }
 }

@@ -7,7 +7,7 @@
 
 	<title>New site!</title>
 
-	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/build/styles.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 	<!-- <link rel="icon" href="images/favicon.png" /> -->
 </head>
@@ -37,6 +37,10 @@
 			<h2 style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
 			<div style="transform: translateZ(100px);" id="header-text-shadow"></div>
 		</div>
+
+		<div class="scroll-button">
+			<img src="images/down_arrow.svg">
+		</div>
 	</div>
 	<script
 	src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -53,10 +57,10 @@
 			// drawLine();
 			bindRotation();
 			$('#header-text').tilt({
-			    reset: false,
-			    easing: "cubic-bezier(.03,.98,.52,.99)",
-			    perspective: 1000,
-			    maxTilt: 30
+				reset: false,
+				easing: "cubic-bezier(.03,.98,.52,.99)",
+				perspective: 1000,
+				maxTilt: 30
 			});
 		});
 	</script>

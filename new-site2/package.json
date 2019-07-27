@@ -1,0 +1,8 @@
+{
+    "name": "gsajith_website",
+    "version": "1.0.0",
+    "scripts": {
+        "css-build": "npx postcss css/*.css --use autoprefixer -d css/build/"
+    }
+}
+
