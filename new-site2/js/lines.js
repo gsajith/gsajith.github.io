@@ -13,7 +13,7 @@ $( window ).resize(function() {
   $.data(this, 'resizeTimer', setTimeout(function() {
     animKey++;
     animKey = animKey % 1000;
-    // drawLine();
+    drawLine();
   }, 50));
 });
 
@@ -28,10 +28,13 @@ function drawLine() {
 
 function calculateCoordinates() {
   lineCoords = [];
-  var startX = windowWidth / 2;
-  var startY = windowHeight / 2;
+  const mainButton = $('#main-button');
+  var startX = mainButton.position().left + (mainButton.width() / 2) - 2.5;
+  var startY = mainButton.position().top + (mainButton.height() / 2);
   var direction = -1;
   var distance = -1;
+  storeCoordinate(startX, startY, lineCoords);
+  startY += 200;
   storeCoordinate(startX, startY, lineCoords);
 
   for (var i = 0; i < 40; i++) {

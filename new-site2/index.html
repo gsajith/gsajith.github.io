@@ -7,7 +7,7 @@
 
 	<title>New site!</title>
 
-	<link rel="stylesheet" href="css/build/styles.css" />
+	<link rel="stylesheet" href="css/styles.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 	<!-- <link rel="icon" href="images/favicon.png" /> -->
 </head>
@@ -33,12 +33,12 @@
 			<div class="dot2" style="transform: translateZ(120px) scale(1.05); top: 1.5vw; left: 85%"></div>
 			<div class="dot2" style="transform: translateZ(60px) scale(.9); top: 12vw; left: 94%"></div>
 
-			<h1 style="transform: translateZ(100px);">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</h1>
-			<h2 style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
+			<h1 class="no-select" style="transform: translateZ(100px);">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</h1>
+			<h2 class="no-select" style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
 			<div style="transform: translateZ(100px);" id="header-text-shadow"></div>
 		</div>
 
-		<div class="scroll-button">
+		<div id="main-button" class="scroll-button">
 			<img src="images/down_arrow.svg">
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 		var windowHeight = 0;
 
 		$( document ).ready(function() {
-			// drawLine();
+			drawLine();
 			bindRotation();
 			$('#header-text').tilt({
 				reset: false,

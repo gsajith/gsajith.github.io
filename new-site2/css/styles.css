@@ -54,6 +54,10 @@ h2 {
 	padding-bottom: 5vw;
 }
 
+.no-select {
+	user-select: none;
+}
+
 #header-text-shadow {
 	position: relative;
 	width: 65vw;
