@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "scripts": {
         "css-build": "npx postcss css/*.css --use autoprefixer -d css/build/"
-    }
+    },
+    "dependencies": {
+        "postcss-cli": "latest",
+        "autoprefixer": "latest"
+    },
+    "license": "MIT"
 }
-
