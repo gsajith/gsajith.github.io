@@ -343,7 +343,7 @@ body {
 }
 
 .resume_link {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
@@ -356,8 +356,8 @@ body {
 .resume_link a:hover {
     text-decoration: underline;
     opacity: .75;
-    margin-top: 8px;
-    font-size: 22px;
+    margin-top: 9px;
+    font-size: 18px;
 }
 
 .homepage-card-bottom-first {
