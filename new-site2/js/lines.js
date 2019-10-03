@@ -14,7 +14,7 @@ $( window ).resize(function() {
     animKey++;
     animKey = animKey % 1000;
     drawLine();
-  }, 50));
+  }, 10));
 });
 
 function drawLine() {
@@ -39,7 +39,8 @@ function calculateCoordinates() {
 
   for (var i = 0; i < 40; i++) {
     direction = nextDirection(direction);
-    distance = Math.floor(Math.random()*400) - 200;
+    // distance = Math.floor(Math.random()*400) - 200;
+    distance = Math.floor(Math.random()*400);
     if (direction == 0) {
       startX += distance;
     } else {
@@ -54,7 +55,8 @@ function nextDirection(oldDirection) {
   while (d == oldDirection) {
     d = Math.floor(Math.random() * 2);
   }
-  return d;
+  // return d;
+  return 1;
 }
 
 function storeCoordinate(xVal, yVal, array) {

@@ -15,6 +15,7 @@
 		<div id="lines-div">
 		</div>
 		<div id="start-page">
+			<div id="intro-text-top" class="no-select">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</div>
 			<div data-tilt id="header-text">
 				<div class="dot1" style="transform: translateZ(60px) scale(.9); top: 20vw; left: -2%"></div>
 				<div class="dot1" style="transform: translateZ(140px) scale(1.1); top: 11.5vw; left: 7%"></div>
@@ -32,9 +33,8 @@
 				<div class="dot2" style="transform: translateZ(40px) scale(.85); top: 4vw; left: 65%"></div>
 				<div class="dot2" style="transform: translateZ(120px) scale(1.05); top: 1.5vw; left: 85%"></div>
 				<div class="dot2" style="transform: translateZ(60px) scale(.9); top: 12vw; left: 94%"></div>
-				
-				<h1 class="no-select" style="transform: translateZ(100px);">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</h1>
-				<h2 class="no-select" style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
+				<h1 id="intro-text" class="no-select" style="transform: translateZ(100px);">Hello, I'm <span data-text="GAUTHAM" class="gradient-text">GAUTHAM</span>.</h1>
+				<h2 class="subtext" class="no-select" style="transform: translateZ(100px);">I’m a designer, developer, and social activist.</h2>
 				<div style="transform: translateZ(100px);" id="header-text-shadow"></div>
 			</div>
 			
@@ -52,12 +52,15 @@
 		<script>
 			var windowWidth = 0;
 			var windowHeight = 0;
-		
+			var headerBottom = 0;
 			function isMobileDevice() {
 			return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 			};
 		
 			$( document ).ready(function() {
+				windowWidth = window.innerWidth;
+				windowHeight = window.innerHeight;
+				headerBottom = $('#header-text').offset().top + $('#header-text').outerHeight();
 				drawLine();
 				bindRotation();
 				if (!isMobileDevice()) {
@@ -69,6 +72,13 @@
 					});
 				}
 			});
+		
+			$(document).scroll(function() {
+				console.log(((headerBottom - $(document).scrollTop())/headerBottom));
+				var belowFold = ((headerBottom - $(document).scrollTop())/headerBottom) < 0;
+				$('#intro-text-top').css({'transition': belowFold ? 'opacity .3s ease-in-out' : '0s'});
+				$('#intro-text-top').css({'opacity': belowFold ? 1 : 0});
+			})
 		</script>
 	</body>
 </html>
