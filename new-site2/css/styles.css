@@ -30,9 +30,7 @@ body {
 
 .gradient-text {
 	text-transform: uppercase;
-	background: linear-gradient(to bottom, #D9D9D9 0%, #BD37A5 45%, #415CA9 80%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: #BD37A5;
 }
 
 h1 {
