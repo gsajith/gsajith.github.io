@@ -58,11 +58,11 @@ const App = () => {
         </BlockHover>
 
         <BlockHover
-          padding={12}
+          padding={14}
           time={600}
           href="https://www.polywork.com/gautham"
           target="_blank">
-          <Polywork style={{ width: 32, height: 32 }} />
+          <Polywork style={{ width: 26, height: 26 }} />
         </BlockHover>
       </div>
 
