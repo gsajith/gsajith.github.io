@@ -3,6 +3,7 @@ import { ReactComponent as Figma } from "./assets/figma.svg";
 import { ReactComponent as Twitter } from "./assets/twitter.svg";
 import { ReactComponent as Github } from "./assets/github.svg";
 import { ReactComponent as Download } from "./assets/download.svg";
+import { ReactComponent as Polywork } from "./assets/polywork.svg";
 
 const App = () => {
   return (
@@ -54,6 +55,14 @@ const App = () => {
           href="https://www.figma.com/@gautham"
           target="_blank">
           <Figma style={{ width: 32, height: 32 }} />
+        </BlockHover>
+
+        <BlockHover
+          padding={14}
+          time={600}
+          href="https://www.polywork.com/gautham"
+          target="_blank">
+          <Polywork style={{ width: 26, height: 26 }} />
         </BlockHover>
       </div>
 
