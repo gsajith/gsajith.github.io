@@ -35,7 +35,7 @@ const App = () => {
         <BlockHover
           padding={12}
           time={600}
-          href="https://twitter.com/GuamHat"
+          href="https://twitter.com/__gauth"
           target="_blank">
           <Twitter style={{ width: 32, height: 32 }} />
         </BlockHover>
